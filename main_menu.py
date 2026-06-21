@@ -1,4 +1,5 @@
 # Кнопка виходу Кнопка грати Кнопкаи налаштувань Фон
+#!!! Додати welcome user
 from customtkinter import *
 from PIL import Image
 class MainMenu(CTk):
