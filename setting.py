@@ -3,7 +3,7 @@
 MAIN_WINDOW_WIDTH = 800
 MAIN_WINDOW_HEIGHT = 400
 
-NICKNAME_MENU_WIDTH = 400
+NICKNAME_MENU_WIDTH = 550
 NICKNAME_MENU_HEIGHT = 400
 
 # Colors 
@@ -23,5 +23,10 @@ DARK_BG = (30, 30, 40)
 # Images
 nickname_menu_image_bg = r"assets\img\backgrounds\nickname_menu_bg.jpg"
 
+
+#Fonts
+
+entry_font = ("Arial", 20)
+title_font = ("Arial", 30)
 
 
