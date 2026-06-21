@@ -21,6 +21,7 @@ DARK_BG = (30, 30, 40)
 
 
 # Images
+nickname_menu_image_bg = r"assets\img\backgrounds\nickname_menu_bg.jpg"
 
 
 
