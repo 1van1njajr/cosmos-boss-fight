@@ -12,7 +12,9 @@ class MainMenu(CTk):
         # Images
         self.exit_image = Image.open(r"assets\img\backgrounds\exit_button.jpg")
         self.exit_button_image = CTkImage(self.exit_image, size=(100, 50))
-        
+
+        self.settings_image = Image.open(r"assets\img\backgrounds\settings.jpg")
+        self.settings_button_image = CTkImage(self.settings_image, size=(100, 50))
 
         # Background
         self.bg_image = Image.open(r"assets\img\backgrounds\main_menu_bg.jpg")
@@ -23,11 +25,11 @@ class MainMenu(CTk):
         # Buttons
         self.play_button = CTkButton(self, text="Play", command=self.play_game, width=100, height=50)
         self.exit_button = CTkButton(self, image=self.exit_button_image, command=self.exit_game, width=100, height=50, text="", bg_color="transparent", fg_color="transparent", hover_color="grey")
-        self.settings_button = CTkButton(self, text="Settings", command=self.open_settings, width=100, height=50)
+        self.settings_button = CTkButton(self, image=self.settings_button_image, command=self.open_settings, width=100, height=50, text="", bg_color="transparent", fg_color="transparent", hover_color="grey")
         #Draw buttons
         self.play_button.place(x=450, y=250)
         self.exit_button.place(x=440, y=390)
-        self.settings_button.place(x=450, y=320)
+        self.settings_button.place(x=440, y=320)
 
 
         # Function for buttons
