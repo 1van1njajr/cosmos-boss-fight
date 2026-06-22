@@ -3,6 +3,8 @@
 from customtkinter import *
 from PIL import Image
 from setting import *
+from play_menu import PlayMenu
+from settings_menu import SettMenu
 
 class MainMenu(CTk):
     def __init__(self, username):
@@ -30,8 +32,8 @@ class MainMenu(CTk):
         self.frame = CTkFrame(self, 
                               width = 400, 
                               height = 600, 
-                              fg_color="#00245e", 
-                              bg_color="#00245e")
+                              fg_color="transparent",
+                              bg_color="transparent")
         self.frame.pack_propagate(False)
         self.frame.pack(pady = 110)
 
@@ -51,8 +53,13 @@ class MainMenu(CTk):
         # Function for buttons
     def play_game(self):
         print("Play button clicked")
+        self.destroy()  # Закриваємо головне меню перед відкриттям PlayMenu
+        play_menu = PlayMenu()
+        play_menu.mainloop()
     def exit_game(self):
-        self.destroy()
+        self.destroy()  # Закриваємо головне меню перед відкриттям SettMenu
+        sett_menu = SettMenu()
+        sett_menu.mainloop()
     def open_settings(self):
         print("Settings button clicked")
     
