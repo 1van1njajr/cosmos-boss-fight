@@ -7,6 +7,7 @@
 from customtkinter import *
 from PIL import Image
 from setting import *
+from main_menu import MainMenu
 
 class NicknameMenu(CTk):
 
@@ -64,15 +65,20 @@ class NicknameMenu(CTk):
                                     font = entry_font,
                                     text_color = "black",
                                     hover_color="orange",
-                                    command=self.get_nickname
+                                    command=self.go_main_menu
                                     )
         self.play_button.pack()
 
-    def get_nickname(self):
-        self.username = self.entry.get().strip()
-        print(self.username)
-        # перехід до екрану гри
-        return self.username
+    def go_main_menu(self):
+        username = self.entry.get().strip()
+        
+        if not username:
+            return
+
+        self.destroy()                 
+        
+        main_menu = MainMenu(username)
+        main_menu.mainloop()            
 
 
 
