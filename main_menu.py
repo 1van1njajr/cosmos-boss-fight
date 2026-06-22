@@ -64,7 +64,7 @@ class MainMenu(CTk):
         print("Settings button clicked")
     
 
-main_menu = MainMenu("Player1")
-main_menu.mainloop()
+# main_menu = MainMenu("Player1")
+# main_menu.mainloop()
 
 

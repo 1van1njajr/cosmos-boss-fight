@@ -15,5 +15,5 @@ class SettMenu(CTk):
         self.bg_label = CTkLabel(self, image=self.bg_photo, text="")
         self.bg_label.place(x=0, y=0)
 
-sett_menu = SettMenu()
-sett_menu.mainloop()
+# sett_menu = SettMenu()
+# sett_menu.mainloop()
