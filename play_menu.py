@@ -15,5 +15,5 @@ class PlayMenu(CTk):
         self.bg_label = CTkLabel(self, image=self.bg_photo, text="")
         self.bg_label.place(x=0, y=0)
 
-play_menu = PlayMenu()
-play_menu.mainloop()
+# play_menu = PlayMenu()
+# play_menu.mainloop()
