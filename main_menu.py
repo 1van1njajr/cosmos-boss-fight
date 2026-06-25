@@ -57,10 +57,11 @@ class MainMenu(CTk):
         play_menu = PlayMenu()
         play_menu.mainloop()
     def exit_game(self):
+        quit()  # Закриваємо програму при натисканні кнопки виходу
+    def open_settings(self):
         self.destroy()  # Закриваємо головне меню перед відкриттям SettMenu
         sett_menu = SettMenu()
         sett_menu.mainloop()
-    def open_settings(self):
         print("Settings button clicked")
     
 
