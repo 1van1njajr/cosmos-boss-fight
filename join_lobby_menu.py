@@ -15,5 +15,5 @@ class JoinLobbyMenu(CTk):
         self.bg_label = CTkLabel(self, image=self.bg_photo, text="")
         self.bg_label.place(x=0, y=0)
 
-join_lobby_menu = JoinLobbyMenu()
-join_lobby_menu.mainloop()
+# join_lobby_menu = JoinLobbyMenu()
+# join_lobby_menu.mainloop()

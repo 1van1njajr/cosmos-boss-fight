@@ -1,7 +1,7 @@
 from customtkinter import *
 from PIL import Image
 from setting import *
-from play_menu import *
+from play_menu import PlayMenu
 class CreateLobbyMenu(CTk):
     def __init__(self):
         super().__init__()
@@ -24,9 +24,11 @@ class CreateLobbyMenu(CTk):
         self.back_button.place(x=450, y=300)
         # Functions for buttons
     def go_back(self):
+        from play_menu import PlayMenu
+
         self.destroy()  # Закриваємо CreateLobbyMenu перед відкриттям PlayMenu
         play_menu = PlayMenu()
         play_menu.mainloop()
 
-create_lobby_menu = CreateLobbyMenu()
-create_lobby_menu.mainloop()
+# create_lobby_menu = CreateLobbyMenu()
+# create_lobby_menu.mainloop()

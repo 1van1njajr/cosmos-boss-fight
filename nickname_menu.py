@@ -15,7 +15,7 @@ class NicknameMenu(CTk):
 
     def __init__(self):
         super().__init__()
-        self.geometry(f"{NICKNAME_MENU_WIDTH}x{NICKNAME_MENU_HEIGHT}")
+        self.geometry(f"{NICKNAME_MENU_WIDTH}x{NICKNAME_MENU_HEIGHT}") 
         self.title("Welcome to the game")
         self.resizable(False, False)
 

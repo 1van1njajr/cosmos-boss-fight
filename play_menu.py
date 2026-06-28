@@ -22,23 +22,5 @@ class PlayMenu(CTk):
         self.bg_label = CTkLabel(self, image=self.bg_photo, text="")
         self.bg_label.place(x=0, y=0)
 
-        # Buttons   
-        self.create_lobby_button = CTkButton(self,image = self.create_lobby_button_image, command=self.create_lobby, width=200, height=140, text="", bg_color="blue", fg_color="blue")
-        self.join_lobby_button = CTkButton(self, image=self.join_lobby_button_photo, command=self.join_lobby, width=200, height=140, text="", bg_color="blue", fg_color="blue")
-        # Draw buttons
-        self.create_lobby_button.place(x=400, y=100)
-        self.join_lobby_button.place(x=400, y=300)
-        # Functions for buttons
-    def create_lobby(self):
-        self.destroy()  # Закриваємо PlayMenu перед відкриттям CreateLobbyMenu
-        print("Create Lobby button clicked")
-        create_lobby_menu = CreateLobbyMenu()
-        create_lobby_menu.mainloop()
-    def join_lobby(self):
-        self.destroy()  # Закриваємо PlayMenu перед відкриттям JoinLobbyMenu
-        join_lobby_menu = JoinLobbyMenu()
-        join_lobby_menu.mainloop()
-        print("Join Lobby button clicked")
-
-play_menu = PlayMenu()
-play_menu.mainloop()
+# play_menu = PlayMenu()
+# play_menu.mainloop()
