@@ -1,7 +1,7 @@
 from customtkinter import *
 from PIL import Image
 from setting import *
-from play_menu import PlayMenu
+from play_menu import *
 class CreateLobbyMenu(CTk):
     def __init__(self):
         super().__init__()
@@ -18,6 +18,8 @@ class CreateLobbyMenu(CTk):
         # Buttons
         self.enter_port = CTkEntry(self, placeholder_text="Enter Port", width=200, height=40)
         self.enter_port.place(x=400, y=200)
+        self.enter_host = CTkEntry(self, placeholder_text="Enter Host", width=200, height=40)
+        self.enter_host.place(x=400, y=250)
         self.back_button = CTkButton(self, text="Back", command=self.go_back, width=100, height=50)
         self.back_button.place(x=450, y=300)
         # Functions for buttons
