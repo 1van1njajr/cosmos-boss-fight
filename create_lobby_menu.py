@@ -1,7 +1,6 @@
 from customtkinter import *
 from PIL import Image
 from setting import *
-from play_menu import PlayMenu
 class CreateLobbyMenu(CTk):
     def __init__(self):
         super().__init__()
