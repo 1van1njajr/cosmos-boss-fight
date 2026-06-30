@@ -15,15 +15,8 @@ class MainMenu(CTk):
         self.configure(bg="black")
         self.resizable(False, False)
 
-        # Images
-        self.exit_image = Image.open(r"assets\img\backgrounds\exit_button.jpg")
-        self.exit_button_image = CTkImage(self.exit_image, size=(100, 50))
-
-        self.settings_image = Image.open(r"assets\img\backgrounds\settings.jpg")
-        self.settings_button_image = CTkImage(self.settings_image, size=(100, 50))
-
         # Background
-        self.bg_image = Image.open(r"assets\img\backgrounds\main_menu_bg.jpg")
+        self.bg_image = Image.open(main_menu_image_bg)
         self.bg_photo = CTkImage(self.bg_image, size=(1000, 600))
         self.bg_label = CTkLabel(self, image=self.bg_photo, text="")
         self.bg_label.place(x=0, y=0)
@@ -41,9 +34,9 @@ class MainMenu(CTk):
         self.lbl_title.pack(pady = 10)
 
         # Buttons
-        self.play_button = CTkButton(self.frame, text="Play", command=self.play_game, width=100, height=50)
-        self.exit_button = CTkButton(self.frame, image=self.exit_button_image, command=self.exit_game, width=100, height=50, text="", bg_color="transparent", fg_color="transparent", hover_color="grey")
-        self.settings_button = CTkButton(self.frame, image=self.settings_button_image, command=self.open_settings, width=100, height=50, text="", bg_color="transparent", fg_color="transparent", hover_color="grey")
+        self.play_button = CTkButton(self.frame, text="Play", command=self.play_game, width=100, height=50, fg_color="darkblue", hover_color="purple")
+        self.exit_button = CTkButton(self.frame, command=self.exit_game, width=100, height=50, text="Exit", fg_color="darkblue", hover_color="purple")
+        self.settings_button = CTkButton(self.frame, command=self.open_settings, width=100, height=50, text="Settings",fg_color="darkblue",  hover_color="purple")
         #Draw buttons
         self.play_button.pack(pady = 30)
         self.settings_button.pack()

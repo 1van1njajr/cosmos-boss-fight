@@ -15,14 +15,15 @@ PURPLE = (128, 0, 128)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
-DEFAULT_VOLUME = 1.0
-LIGHT_BG = WHITE
-DARK_BG = (30, 30, 40)
-
-
 # Images
 nickname_menu_image_bg = r"assets\img\backgrounds\nickname_menu_bg.jpg"
-
+create_lobby_menu_image_bg = r"assets\img\backgrounds\create_lobby_bg.jpg"
+create_lobby_button_image = r"assets\img\backgrounds\create_lobby_button.png"
+join_lobby_button_image =  r"assets\img\backgrounds\join_lobby_button.png"
+join_lobby_bg = r"assets\img\backgrounds\join_lobby_bg.jpg"
+main_menu_image_bg = r"assets\img\backgrounds\main_menu_bg.jpg"
+play_menu_image_bg = r"assets\img\backgrounds\play_menu_bg.jpg"
+settings_menu_image_bg = r"assets\img\backgrounds\settings_menu_bg.jpg"
 
 #Fonts
 
