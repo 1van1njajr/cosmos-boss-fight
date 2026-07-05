@@ -60,5 +60,3 @@ class MainMenu(CTk):
 
 # main_menu = MainMenu("Player1")
 # main_menu.mainloop()
-
-

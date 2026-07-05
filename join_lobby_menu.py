@@ -32,12 +32,13 @@ class JoinLobbyMenu(CTk):
         play_menu = PlayMenu()
         play_menu.mainloop()
     def join_lobby(self):
-        self.destroy()  # Закриваємо JoinLobbyMenu перед відкриттям FinalPlayerMenu
-        port = self.enter_port.get()
-        host = self.enter_host.get()
-        print(f"Joining lobby with Port: {port}, Host: {host}")
-        final_player_menu = FinalPlayerMenu()
-        final_player_menu.mainloop()
+        pass
+        # self.destroy()  # Закриваємо JoinLobbyMenu перед відкриттям FinalPlayerMenu
+        # port = self.enter_port.get()
+        # host = self.enter_host.get()
+        # print(f"Joining lobby with Port: {port}, Host: {host}")
+        # final_player_menu = FinalPlayerMenu()
+        # final_player_menu.mainloop()
 
 # join_lobby_menu = JoinLobbyMenu()
 # join_lobby_menu.mainloop()
