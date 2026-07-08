@@ -15,8 +15,14 @@ class SettMenu(CTk):
         self.bg_label = CTkLabel(self, image=self.bg_photo, text="")
         self.bg_label.place(x=0, y=0)
         # Buttons
-        self.back_button = CTkButton(self, text="Back", width=100, height=50)
+        self.back_button = CTkButton(self, text="Back", width=100, height=50, command=self.go_back)
         self.back_button.place(x=450, y=300)
         # Functions for buttons
+    def go_back(self):
+        # self.destroy()
+        # main_menu = MainMenu()
+        # main_menu.mainloop()
+        pass
+
 # sett_menu = SettMenu()
 # sett_menu.mainloop()

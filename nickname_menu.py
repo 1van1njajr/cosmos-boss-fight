@@ -7,7 +7,7 @@
 from customtkinter import *
 from PIL import Image
 from setting import *
-from main_menu import MainMenu
+from ui_main_menu import MainMenu
 
 class NicknameMenu(CTk):
 
