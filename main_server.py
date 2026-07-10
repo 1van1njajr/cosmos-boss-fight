@@ -44,13 +44,13 @@ class ClassicServer:
 
 	def handle_client(self, client_sock: socket.socket, addr):
 		with client_sock:
-			client_sock.sendall(b'Welcome to ClassicServer\n')
+			client_sock.sendall(b'Welcome to Server\n')
 			try:
 				while True:
 					data = client_sock.recv(1024)
 					if not data:
 						break
-					# Echo back
+					# Echo back 
 					client_sock.sendall(b'ECHO: ' + data)
 			except ConnectionResetError:
 				pass
