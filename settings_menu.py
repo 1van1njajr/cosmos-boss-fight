@@ -2,12 +2,14 @@ from customtkinter import *
 from PIL import Image
 from setting import *
 class SettMenu(CTk):
-    def __init__(self):
+    def __init__(self, username):
         super().__init__()
         self.title("Settings Menu")
         self.geometry("1000x600")
         self.configure(bg="black")
         self.resizable(False, False)
+
+        self.username = username
 
         # Background
         self.bg_image = Image.open(settings_menu_image_bg)
@@ -19,10 +21,11 @@ class SettMenu(CTk):
         self.back_button.place(x=450, y=300)
         # Functions for buttons
     def go_back(self):
-        # self.destroy()
-        # main_menu = MainMenu()
-        # main_menu.mainloop()
-        pass
+        from ui_main_menu import MainMenu
+        self.destroy()
+        main_menu = MainMenu(self.username)
+        main_menu.mainloop()
+
 
 # sett_menu = SettMenu()
 # sett_menu.mainloop()

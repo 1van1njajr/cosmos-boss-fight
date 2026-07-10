@@ -53,7 +53,7 @@ class MainMenu(CTk):
         quit()  # Закриваємо програму при натисканні кнопки виходу
     def open_settings(self):
         self.destroy()  # Закриваємо головне меню перед відкриттям SettMenu
-        sett_menu = SettMenu()
+        sett_menu = SettMenu(self.username)
         sett_menu.mainloop()
         print("Settings button clicked")
     

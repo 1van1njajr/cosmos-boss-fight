@@ -8,7 +8,7 @@ from customtkinter import *
 from PIL import Image
 from setting import *
 from ui_main_menu import MainMenu
-
+ 
 class NicknameMenu(CTk):
 
     username = ""
