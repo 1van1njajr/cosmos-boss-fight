@@ -15,8 +15,7 @@ class GameClient:
             self.socket.connect((self.host, self.port))
             self.connected = True
             print(f"Connected to server at {self.host}:{self.port}")
-            
-            # Start receiving messages in a separate thread
+         # Start receiving messages in a separate thread
             receive_thread = threading.Thread(target=self.receive_messages, daemon=True)
             receive_thread.start()
         except Exception as e:
