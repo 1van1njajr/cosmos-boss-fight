@@ -37,11 +37,11 @@ class ClassicServer:
 			pass
 		for c, _ in self.clients:
 			try:
-				c.close()
+				c.close()                                                  
 			except Exception:
 				pass
 		print('Server stopped')
-
+	
 	def handle_client(self, client_sock: socket.socket, addr):
 		with client_sock:
 			client_sock.sendall(b'Welcome to Server\n')

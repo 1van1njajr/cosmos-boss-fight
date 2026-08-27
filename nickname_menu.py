@@ -53,7 +53,7 @@ class NicknameMenu(CTk):
                               width = 300,
                               height = 50,
                               fg_color="white",
-                              font = entry_font,
+                              font = entry_font,  
                               text_color="black")
         self.entry.pack(pady = 10)
 
