@@ -23,11 +23,11 @@ def clamp(v, lo, hi):
     return max(lo, min(hi, v))
 
 
-def angle_diff(a, b):
-    d = (a - b) % (2 * math.pi)
-    if d > math.pi:
-        d -= 2 * math.pi
-    return d
+# def angle_diff(a, b):
+#     d = (a - b) % (2 * math.pi)
+#     if d > math.pi:
+#         d -= 2 * math.pi
+#     return d
 
 class Player:
 
