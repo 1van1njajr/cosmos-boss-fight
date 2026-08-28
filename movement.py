@@ -1,90 +1,72 @@
 import pygame
 import math
+import sys
 
 pygame.init()
 
-# Screen setup
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Circular Motion - Boss Fight")
+pygame.display.set_caption("Move on Circle - Press SPACE to reverse direction")
 clock = pygame.time.Clock()
+FPS = 60
 
-# Player setup
-class Player(pygame.sprite.Sprite):
-    def __init__(self, center_x, center_y):
-        super().__init__()
-        self.image = pygame.Surface((40, 40))
-        self.image.fill((0, 255, 0))
-        self.rect = self.image.get_rect()
-        
-        # Circular motion parameters
-        self.center_x = center_x
-        self.center_y = center_y
-        self.radius = 150
-        self.angle = 0
-        self.speed = 3  # degrees per frame
-        self.clockwise = True  # True for clockwise, False for counter-clockwise
-        
-        self.update_position()
-    
-    def update_position(self):
-        """Update player position based on circular motion"""
-        # Convert angle to radians
-        rad = math.radians(self.angle)
-        
-        # Calculate position on circle
-        if self.clockwise:
-            x = self.center_x + self.radius * math.cos(rad)
-            y = self.center_y + self.radius * math.sin(rad)
-        else:
-            x = self.center_x + self.radius * math.cos(-rad)
-            y = self.center_y + self.radius * math.sin(-rad)
-        
-        self.rect.center = (int(x), int(y))
-    
-    def change_direction(self):
-        """Change rotation direction when space is pressed"""
-        self.clockwise = not self.clockwise
-    
-    def update(self):
-        """Update player movement"""
-        self.angle += self.speed
-        if self.angle >= 360:
-            self.angle = 0
-        self.update_position()
-    
-    def draw(self, surface):
-        surface.blit(self.image, self.rect)
+CENTER = (WIDTH // 2, HEIGHT // 2)
+RADIUS = 200
+TRACK_COLOR = (80, 80, 80)
+TRACK_WIDTH = 3
 
-# Main game loop
-player = Player(WIDTH // 2, HEIGHT // 2)
+PLAYER_RADIUS = 15
+PLAYER_COLOR = (255, 80, 80)
 
-running = True
-while running:
-    clock.tick(60)
-    
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                player.change_direction()
-    
-    # Update
-    player.update()
-    
-    # Draw
-    screen.fill((20, 20, 40))
-    
-    # Draw center point
-    pygame.draw.circle(screen, (255, 255, 255), (WIDTH // 2, HEIGHT // 2), 5)
-    
-    # Draw circular path
-    pygame.draw.circle(screen, (100, 100, 100), (WIDTH // 2, HEIGHT // 2), player.radius, 1)
-    
-    # Draw player
-    player.draw(screen)
-    
+
+angle = 0.0               
+angular_speed = 0.03     
+direction = 1              
+
+font = pygame.font.SysFont(None, 28)
+
+
+def get_player_pos(angle_rad):
+    """Return (x, y) of the player on the circle for a given angle."""
+    x = CENTER[0] + RADIUS * math.cos(angle_rad)
+    y = CENTER[1] + RADIUS * math.sin(angle_rad)
+    return int(x), int(y)
+
+def draw_scene():
+    screen.fill((20, 20, 30))
+
+    pygame.draw.circle(screen, TRACK_COLOR, CENTER, RADIUS, TRACK_WIDTH)
+
+    px, py = get_player_pos(angle)
+    pygame.draw.circle(screen, PLAYER_COLOR, (px, py), PLAYER_RADIUS)
+
+
     pygame.display.flip()
 
-pygame.quit()
+
+def main():
+    global angle, direction
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    direction *= -1 
+                elif event.key == pygame.K_ESCAPE:
+                    running = False
+
+        angle += angular_speed * direction
+        angle %= (2 * math.pi) 
+
+        draw_scene()
+        clock.tick(FPS)
+
+    pygame.quit()
+    sys.exit()
+
+
+if __name__ == "__main__":
+    main()
