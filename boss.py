@@ -23,15 +23,15 @@ def clamp(v, lo, hi):
     return max(lo, min(hi, v))
 
 
-# def angle_diff(a, b):
-#     d = (a - b) % (2 * math.pi)
-#     if d > math.pi:
-#         d -= 2 * math.pi
-#     return d
+def angle_diff(a, b):
+    d = (a - b) % (2 * math.pi)
+    if d > math.pi:
+        d -= 2 * math.pi
+    return d
 
 class Player:
 
-    ORBIT_SPEED = 2.0       
+    ORBIT_SPEED = 2.0           
     RADIAL_SPEED = 220.0    
     MIN_RADIUS = 130
     MAX_RADIUS = 310
@@ -40,7 +40,7 @@ class Player:
         self.angle = angle
         self.color = color
         self.dark = dark
-        self.keys = keys 
+        self.keys = keys            
         self.name = name
         self.score = 0
         self.alive = True
